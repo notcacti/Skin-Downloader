@@ -10,17 +10,16 @@ const prefFilePath = path.join(appDataPath, "preferences.json");
 
 app.whenReady().then(() => {
     mainWindow = new BrowserWindow({
-        width: 845,
-        height: 425,
+        width: 1280,
+        height: 720,
         title: "Cacti's Skin Downloader",
         autoHideMenuBar: true,
         fullscreen: false,
-        icon: path.join(process.cwd(), "assets", "icon.ico"),
         webPreferences: {
             nodeIntegration: false,
             contextIsolation: true,
-            devTools: false,
-            preload: path.join(process.cwd(), "dist/preload.cjs"),
+            devTools: true,
+            preload: path.join(process.resourcesPath, "wwwroot", "preload.cjs"),
         },
     });
 
@@ -32,6 +31,7 @@ app.whenReady().then(() => {
             console.error("Failed to load the application: ", err);
         });
 
+    mainWindow.webContents.openDevTools();
     mainWindow.on("closed", () => {
         mainWindow = null;
     });
