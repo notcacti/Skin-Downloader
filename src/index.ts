@@ -14,7 +14,8 @@ app.whenReady().then(() => {
         height: 425,
         title: "Cacti's Skin Downloader",
         autoHideMenuBar: true,
-        fullscreen: true,
+        fullscreen: false,
+        icon: path.join(process.cwd(), "assets", "icon.ico"),
         webPreferences: {
             nodeIntegration: false,
             contextIsolation: true,

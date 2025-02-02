@@ -9,8 +9,8 @@
         "strict": true,
         "strictPropertyInitialization": false,
         "strictNullChecks": false,
-        "allowJs": true,
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        "sourceMap": false
     },
-    "include": ["src/**/*"]
+    "include": ["src/**/*", "wwwroot"]
 }

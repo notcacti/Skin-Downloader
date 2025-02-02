@@ -5,24 +5,47 @@
     "scripts": {
         "build": "tsc",
         "start": "electron dist/main.js",
-        "dev": "tsc && electron ."
+        "dev": "tsc && electron .",
+        "package": "electron-builder -w"
+    },
+    "build": {
+        "appId": "com.cacti.skinDownloader",
+        "copyright": "Copyright (c) 2025 CactiFX",
+        "productName": "Skin Downloader",
+        "directories": {
+            "output": "releases/${platform}/${arch}"
+        },
+        "files": [
+            "assets/",
+            "dist/**/*",
+            "wwwroot/**/*"
+        ],
+        "extraResources": [
+            {
+                "from": "wwwroot",
+                "to": "wwwroot",
+                "filter": [
+                    "**/*"
+                ]
+            }
+        ],
+        "win": {
+            "icon": "assets/icon.ico"
+        }
     },
     "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "description": "",
+    "author": "CactiFX <fxcacti@gmail.com>",
+    "license": "MIT",
+    "description": "A simple and customizable minecraft java skin downloader.",
     "type": "module",
     "devDependencies": {
         "@types/electron": "^1.4.38",
         "@types/express": "^5.0.0",
         "@types/node": "^22.13.0",
         "electron": "^34.0.2",
-        "electron-packager": "^17.1.2",
+        "electron-builder": "^25.1.8",
         "nodemon": "^3.1.9",
         "rimraf": "^6.0.1",
         "typescript": "^5.7.3"
-    },
-    "dependencies": {
-        "express": "^4.21.2"
     }
 }
