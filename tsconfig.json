@@ -9,6 +9,7 @@
         "strict": true,
         "strictPropertyInitialization": false,
         "strictNullChecks": false,
+        "allowJs": true,
         "skipLibCheck": true
     },
     "include": ["src/**/*"]

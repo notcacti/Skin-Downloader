@@ -1,7 +1,7 @@
+const $ = (id) => document.getElementById(id);
 const modal = $("modal");
 
 function openModal() {
-    console.log("here");
     modal.style.display = "block";
 }
 
@@ -18,9 +18,12 @@ window.addEventListener("keydown", (event) => {
     }
 });
 
-window.addEventListener("keydown", (event) => {
-    if (event.ctrlKey && event.shiftKey && event.key === "O") {
-        event.preventDefault();
-        openModal();
-    }
+$("modal-content").addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const savePath = $("savePath").value;
+
+    window.electron.sendData(savePath);
+
+    modal.style.display = "none";
 });
