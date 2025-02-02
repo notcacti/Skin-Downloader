@@ -6,23 +6,34 @@
 html {
     background-color: rgb(7, 8, 29);
     color: #fff;
-    max-width: 750px;
-    max-height: 600px;
+    height: 100vh;
+    width: 100vw;
+
     margin: 0;
     padding: 0;
     font-size: 30px;
     text-align: center;
+    overflow: hidden;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
 main {
     display: flex;
     flex-direction: column;
-}
-
-body {
     border: 2px solid rgb(122, 122, 122);
     padding: 30px;
     margin: 0;
+    width: 745px;
+    height: fit-content;
 }
 
 main h1 {
@@ -56,6 +67,7 @@ main form input {
     font-family: "Pixelify Sans", serif;
     font-size: 23px;
     padding: 5px;
+    text-align: center;
     text-shadow: #4e4e4e 1px 1px 0;
     border: 2px solid rgb(168, 168, 168);
     transition: all 250ms ease-in-out;
