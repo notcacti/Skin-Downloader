@@ -7,6 +7,7 @@ app.whenReady().then(() => {
     mainWindow = new BrowserWindow({
         width: 845,
         height: 425,
+        title: "Cacti's Skin Downloader",
         autoHideMenuBar: true,
         webPreferences: {
             nodeIntegration: false,
@@ -22,6 +23,8 @@ app.whenReady().then(() => {
         .catch((err) => {
             console.error("Failed to load the application: ", err);
         });
+
+    mainWindow.webContents.openDevTools();
 
     mainWindow.on("closed", () => {
         mainWindow = null;

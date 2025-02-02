@@ -3,6 +3,10 @@
     --shadow-color: #00940c;
 }
 
+* {
+    transition: all 250ms ease-in-out;
+}
+
 html {
     background-color: rgb(7, 8, 29);
     color: #fff;
@@ -27,9 +31,11 @@ body {
 }
 
 main {
+    /* display: none; */
     display: flex;
     flex-direction: column;
     border: 2px solid rgb(122, 122, 122);
+    border-radius: 30px;
     padding: 30px;
     margin: 0;
     width: 745px;
@@ -97,4 +103,98 @@ main form button {
 
 main form button:hover {
     transform: scale(1.05);
+}
+
+/* Modal styles */
+/* !!!THIS IS AN EDITED VERSION OF A CHATGPT GENERATED CODE. I WAS TOO LAZY TO WRITE IT MYSELF!!! */
+
+#modal {
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    backdrop-filter: blur(7px);
+    background-color: rgba(0, 0, 0, 0.5); /* Dark background with opacity */
+    overflow: auto; /* Enable scroll if needed */
+    padding-top: 100px; /* Positioning for centering */
+}
+
+#modal-content {
+    background-color: rgb(15, 15, 45); /* Modal background color */
+    margin: auto; /* Center modal */
+    padding: 20px; /* Space inside modal */
+    border: 2px solid rgb(122, 122, 122); /* Border color */
+    width: 80%; /* Modal width */
+    max-width: 500px; /* Maximum width */
+    border-radius: 10px; /* Rounded corners */
+    color: #fff; /* Text color */
+}
+
+#modal-content h1 {
+    margin: 0;
+    text-shadow: var(--color) 3px 3px 0;
+    font-family: "Pixelify Sans", sans-serif;
+    text-align: center;
+}
+
+.option p {
+    text-shadow: rgb(161, 161, 161) 2px 2px 0;
+    font-family: "Pixelify Sans", serif;
+    text-align: left; /* Left-align text */
+}
+
+.save input[type="text"] {
+    text-shadow: rgb(161, 161, 161) 1px 1px 0;
+    font-family: "Pixelify Sans", serif;
+    width: calc(100% - 20px); /* Full width minus padding */
+    height: 40px; /* Input height */
+    background-color: transparent; /* Transparent background */
+    color: white; /* Input text color */
+    border: 2px solid rgb(122, 122, 122); /* Input border color */
+    border-radius: 10px; /* Rounded corners */
+    padding: 5px; /* Space inside input */
+    font-size: 20px;
+    text-align: center;
+    text-shadow: #4e4e4e 1px 1px 0; /* Text shadow */
+}
+
+.save input:focus {
+    outline: 0;
+    transform: scale(1.02);
+}
+
+#modal-content button {
+    font-family: "Pixelify Sans", serif;
+    font-size: 25px;
+    padding: 5px;
+    height: 50px;
+    background-color: transparent;
+    color: var(--color);
+    border: 2px solid var(--color);
+    width: 100px;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+    text-shadow: var(--shadow-color) 2px 2px 0;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+#modal-content button:hover {
+    transform: scale(1.05);
+}
+
+.option {
+    padding: 10px;
+}
+
+.option p {
+    margin: 10px 0;
+}
+
+#modal-content hr {
+    margin: 5;
+    color: rgb(78, 78, 78);
 }
