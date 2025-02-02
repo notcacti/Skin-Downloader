@@ -1,5 +1,3 @@
-const $ = (id) => document.getElementById(id);
-
 function getSkin() {}
 
 function changeColor() {
@@ -35,7 +33,3 @@ window.addEventListener(
     },
     false
 );
-
-$("details").addEventListener("submit", (e) => {
-    e.preventDefault();
-});

@@ -19,12 +19,22 @@ export async function getMinecraftSkin(username: string) {
         }
         const skinData = await skinResponse.json();
 
-        // Get the skin URL
-        const skinUrl = `https://textures.minecraft.net/texture/${skinData.properties[0].value}`;
+        const valueDetails = JSON.parse(atob(skinData.properties[0].value));
 
-        // Return the skin URL
-        return skinUrl;
+        const skinTextureUrl = valueDetails.textures.SKIN.url;
+
+        console.log(skinTextureUrl);
+        // Step 3: Fetch the skin texture and convert it to Base64
+        const imageResponse = await fetch(skinTextureUrl);
+        if (!imageResponse.ok) {
+            throw new Error("Failed to fetch skin texture");
+        }
+        const imageRes = await imageResponse.arrayBuffer();
+        const imageBuffer = Buffer.from(imageRes);
+
+        return imageBuffer;
     } catch (error) {
+        console.error(error);
         return null;
     }
 }

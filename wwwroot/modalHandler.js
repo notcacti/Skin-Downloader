@@ -1,5 +1,4 @@
-const $ = (id) => document.getElementById(id);
-const modal = $("modal");
+const modal = document.getElementById("modal");
 
 function openModal() {
     modal.style.display = "block";
@@ -18,12 +17,14 @@ window.addEventListener("keydown", (event) => {
     }
 });
 
-$("modal-content").addEventListener("submit", (event) => {
+document.getElementById("savePath").addEventListener("click", (e) => {
+    e.preventDefault(0);
+
+    window.electron.sendData();
+});
+
+document.getElementById("modal-content").addEventListener("submit", (event) => {
     event.preventDefault();
-
-    const savePath = $("savePath").value;
-
-    window.electron.sendData(savePath);
 
     modal.style.display = "none";
 });

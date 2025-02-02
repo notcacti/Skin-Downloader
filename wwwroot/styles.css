@@ -161,6 +161,10 @@ main form button:hover {
     text-shadow: #4e4e4e 1px 1px 0; /* Text shadow */
 }
 
+#savePath {
+    cursor: pointer;
+}
+
 .save input:focus {
     outline: 0;
     transform: scale(1.02);
