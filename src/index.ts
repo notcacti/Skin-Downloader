@@ -27,7 +27,7 @@ app.whenReady().then(() => {
     Menu.setApplicationMenu(null);
 
     mainWindow
-        .loadFile(path.join(process.cwd(), "wwwroot", "index.html"))
+        .loadFile(path.join(process.resourcesPath, "wwwroot", "index.html"))
         .catch((err) => {
             console.error("Failed to load the application: ", err);
         });
