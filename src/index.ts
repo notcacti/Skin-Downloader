@@ -18,7 +18,7 @@ app.whenReady().then(() => {
         webPreferences: {
             nodeIntegration: false,
             contextIsolation: true,
-            devTools: true,
+            devTools: false,
             preload: path.join(process.resourcesPath, "wwwroot", "preload.cjs"),
         },
     });
@@ -31,7 +31,6 @@ app.whenReady().then(() => {
             console.error("Failed to load the application: ", err);
         });
 
-    mainWindow.webContents.openDevTools();
     mainWindow.on("closed", () => {
         mainWindow = null;
     });
