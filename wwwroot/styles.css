@@ -1,0 +1,88 @@
+:root {
+    --color: #00ff15;
+    --shadow-color: #00940c;
+}
+
+html {
+    background-color: rgb(7, 8, 29);
+    color: #fff;
+    max-width: 750px;
+    max-height: 600px;
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    border: 2px solid rgb(122, 122, 122);
+    padding: 30px;
+    margin: 0;
+}
+
+main h1 {
+    margin: 14px;
+    padding: 0;
+    font-family: "Pixelify Sans", sans-serif;
+    text-shadow: var(--color) 3px 3px 0;
+    cursor: default;
+    transition: all 250ms ease-in-out;
+}
+
+main form {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    align-items: center;
+}
+
+main form input::placeholder {
+    color: rgb(168, 168, 168);
+    text-align: center;
+
+    text-shadow: #4e4e4e 2px 2px 0;
+}
+
+main form input {
+    height: 60px;
+    background-color: transparent;
+    color: white;
+    width: 100%;
+    font-family: "Pixelify Sans", serif;
+    font-size: 23px;
+    padding: 5px;
+    text-shadow: #4e4e4e 1px 1px 0;
+    border: 2px solid rgb(168, 168, 168);
+    transition: all 250ms ease-in-out;
+    border-radius: 10px;
+}
+
+main form input:focus {
+    outline: none;
+    transform: scale(1.02);
+}
+
+main form button {
+    font-family: "Pixelify Sans", serif;
+    font-size: 25px;
+    padding: 5px;
+    height: 60px;
+    background-color: transparent;
+    color: var(--color);
+    border: 2px solid var(--color);
+    width: 150px;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+    text-shadow: var(--shadow-color) 2px 2px 0;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+main form button:hover {
+    transform: scale(1.05);
+}
